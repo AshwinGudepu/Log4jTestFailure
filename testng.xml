@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Demo Suite">
+<!--  <listeners>
+ 
+ <listener class-name="common.ScreenCaptureOnFailure"></listener>
+ </listeners> -->
+ 	<test name="Flights" preserve-order="true">
+		<parameter name="originCountry" value="Germany" />
+		<parameter name="originState" value="Munich (MUC)" />
+		<parameter name="destinationCountry" value="Greece" />
+		<parameter name="destinationState" value="Mykonos (JMK)" />
+		<parameter name="travelStartDate" value="28" />
+		<parameter name="travelReturnDate" value="29" />
+		<parameter name="adultPassengerFirstName" value="JohnSmith" />
+		<parameter name="adultPassengerSecondName" value="TigerWoods" />
+		<parameter name="childPassengerFirstName" value="MitchellMarsh" />
+		<parameter name="childPassengerSecondName" value="JohnPlayer" />
+		<parameter name="browserName" value="Chrome" />	
+			
+		<classes>
+			<class name="test.FindFlightsTest" >
+				<methods>
+					<include name="applicationPage"/>
+					<include name="selectOriginDestinationStateAndCountry"/>
+					<include name="selectNumberOfAdultAndChildPassengers"/>
+					<include name="selectTravelStartAndReturnDate"/>
+					<include name="verifySelectedOriginState"/>
+					<include name="verifySelectedDestinationState"/>					
+					<include name="clickFindFlightsBtn"/>
+					<include name="summaryPage"/>					
+					<include name="verifyNoOfFromPassengers"/>
+					<include name="verifyDepatureDate"/>
+					<include name="verifyDepatureCity"/>
+					<include name="verifyReturnDate"/>
+					<include name="verifyReturnCity"/>
+					<include name="clickNextStepButton"/>					
+					<include name="verifyPassengerInformationPageIsOpened"/>
+					<include name="enterAdultFirstNameAndLastName"/>
+					<include name="enterChildFirstNameAndLastName"/>								
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
