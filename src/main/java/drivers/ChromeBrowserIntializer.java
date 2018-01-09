@@ -17,7 +17,7 @@ public class ChromeBrowserIntializer extends BrowserIntializer {
 			System.setProperty(chromeProperties.getbrowserClassPath(), chromeProperties.getbrowserDriverPath());
 			driver = new ChromeDriver();
 		}
-		logger.info("Chrome Browser Intiated");
+		logger.info("Chrome Browser Initiated");
 		return driver;
 	}
 
